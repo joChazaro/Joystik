@@ -1,11 +1,9 @@
 // import { StatusBar } from 'expo-status-bar';
-// import React from 'react';
-// import { StyleSheet, Text, View, TouchableOpacity, TextInput, } from 'react-native';
+
 
 // export default function App() {
 //   return (
 //     <View style={styles.container}>
-//       <Text>Hello World! Welcome to Joystik</Text>
 //       <Text>Please set up your profile!</Text>
 //       <Text>First Name: </Text>
 //       <Text>Last Name: </Text>
@@ -47,6 +45,34 @@ class Inputs extends Component {
       return (
          <View style = {styles.container}>
            <Text>Hello World! Welcome to Joystik</Text>
+           <TextInput style = {styles.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "First Name"
+               placeholderTextColor = "#9a73ef"
+               autoCapitalize = "none"
+               onChangeText = {this.handleFirstName}/>
+               
+            <TextInput style = {styles.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "Last Name"
+               placeholderTextColor = "#9a73ef"
+               autoCapitalize = "none"
+               onChangeText = {this.handleLastName}/>
+
+            <TextInput style = {styles.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "Date of Birth"
+               placeholderTextColor = "#9a73ef"
+               autoCapitalize = "none"
+               onChangeText = {this.DateofBirth}/>  
+
+            <TextInput style = {styles.input}
+               underlineColorAndroid = "transparent"
+               placeholder = "Gender"
+               placeholderTextColor = "#9a73ef"
+               autoCapitalize = "none"
+               onChangeText = {this.handleGender}/>
+               
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
