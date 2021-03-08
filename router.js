@@ -3,10 +3,7 @@ import { Dimensions, Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Bookcase from './screens/Bookcase';
-import Explore from './screens/Explore';
-import AddBook from './screens/AddBook';
-import Lists from './screens/Lists';
+
 import Profile from './screens/Profile';
 
 let screen = Dimensions.get('window');
