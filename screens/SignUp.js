@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from 'react-native-popup-menu';
 
 class SignUp extends Component {
    state = {
@@ -23,8 +24,8 @@ class SignUp extends Component {
                underlineColorAndroid = "transparent"
                placeholder = " First Name"
                placeholderTextColor = "#9a73ef"
-               onFocus="this.placeholder = ''"
-               onBlur = "'First Name'"
+               //onFocus="this.placeholder = ' '"
+               //onBlur = "'First Name'"
                autoCapitalize = "Words"
                onChangeText = {this.handleFirstName}/>
                
@@ -41,21 +42,14 @@ class SignUp extends Component {
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.DateofBirth}/>  
-
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = " Gender"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handleGender}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Username"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleUsername}/>   
-            
+               onChangeText = {this.handleUsername}/>  
+        
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Email"
@@ -70,6 +64,23 @@ class SignUp extends Component {
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
             
+            <MenuProvider>
+               <Menu>
+                  <MenuTrigger>
+                     <Text style={styles.input}>Gender</Text>
+                  </MenuTrigger>
+
+               <MenuOptions>
+                  <MenuOption value={"Male"}>
+                     <Text style={styles.menuContent}>Male</Text>
+                  </MenuOption>
+                  <MenuOption value={"Female"}>
+                     <Text style={styles.menuContent}>Female</Text>
+                  </MenuOption>
+               </MenuOptions>
+               </Menu>
+            </MenuProvider>
+            
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
@@ -77,7 +88,9 @@ class SignUp extends Component {
                }>
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>
+            
          </View>
+
       )
    }
 }
@@ -85,14 +98,18 @@ export default SignUp
 
 const styles = StyleSheet.create({
    container: {
-      paddingTop: 60
+      backgroundColor:'turquoise',
+      alignItems:'center',
+      paddingTop: 23,
+      fontSize: 32 
    },
    input: {
      paddingTop: 10,
       margin: 15,
       height: 40,
       borderColor: '#7a42f4',
-      borderWidth: 2
+      borderWidth: 2,
+      
    },
    submitButton: {
       backgroundColor: '#7a42f4',
@@ -105,4 +122,9 @@ const styles = StyleSheet.create({
    submitButtonText:{
       color: 'white'
    }
+
 })
+const menuProviderStyles = {
+  menuProviderWrapper: styles.container,
+  backdrop: styles.backdrop,
+};
