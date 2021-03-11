@@ -23,7 +23,7 @@ class SignUp extends Component {
            <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " First Name"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = 'black'
                //onFocus="this.placeholder = ' '"
                //onBlur = "'First Name'"
                autoCapitalize = "Words"
@@ -32,35 +32,35 @@ class SignUp extends Component {
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Last Name"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = 'black'
                autoCapitalize = "Words"
                onChangeText = {this.handleLastName}/>
 
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Date of Birth"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = 'black'
                autoCapitalize = "none"
                onChangeText = {this.DateofBirth}/>  
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Username"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = 'black'
                autoCapitalize = "none"
                onChangeText = {this.handleUsername}/>  
         
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Email"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = 'black'
                autoCapitalize = "none"
                onChangeText = {this.handleEmail}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Password"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = 'black'
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
             
@@ -107,12 +107,12 @@ const styles = StyleSheet.create({
      paddingTop: 10,
       margin: 15,
       height: 40,
-      borderColor: '#7a42f4',
+      borderColor: 'black',
       borderWidth: 2,
       
    },
    submitButton: {
-      backgroundColor: '#7a42f4',
+      backgroundColor: 'gray',
       padding: 10,
       margin: 15,
       height: 40,

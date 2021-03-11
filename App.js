@@ -1,43 +1,54 @@
-// import {createStackNavigator,} from 'react-navigation'
-// import React, { Component } from 'react'
-// import SignUp from '.app/screens/SignUp'
-// import {StyleSheet, Text, View} from 'react-native';
-
-// // const App = createStackNavigator({
-// //    Login: {screen: Signup },
-// //    Home: {screen: HomeScreen}
-// // });
-
-// const styles = StyleSheet.create({
-//    container: {
-//       flex: 1,
-//       backgroundColor: '#fff',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//    },
-// });
-
-// export default SignUp
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';  
+import { View, Text, Button } from 'react-native';  
+import { createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 import SignUp from './screens/SignUp.js'
-//import new_page from './screens/new_page.js'
+  
+class HomeScreen extends React.Component {  
+    render() {  
+        return (  
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
+                <Text>Home Screen</Text>  
+                <Button  
+                    title="Go to Profile"  
+                    onPress={() => this.props.navigation.navigate('Profile')}  
+                />  
 
-const styles = StyleSheet.create({
-   container: {
-     flex: 1,
-     backgroundColor: '#fff',
-     alignItems: 'center',
-     justifyContent: 'center',
-   },
- });
+                <Text>Sign Up</Text>  
+                <Button  
+                    title="Go to Sign Up"  
+                    onPress={() => this.props.navigation.navigate('SignUp')}
+                />  
+            </View>  
+        );  
+    }  
+}  
 
-export default function App() {
-  return (
-    <NavigationContainer>{
-      <SignUp />
-   }</NavigationContainer>
-  );
-}
+class ProfileScreen extends React.Component {  
+    render() {  
+        return (  
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>  
+                <Text>Profile Screen</Text>  
+            </View>  
+    );  
+    }  
+} 
+
+  
+const AppNavigator = createStackNavigator(  
+    {  
+        Home: HomeScreen,  
+        Profile: ProfileScreen,
+        SignUp: SignUp  
+    },  
+    {  
+        initialRouteName: "Home"  
+    }  
+);  
+  
+const AppContainer = createAppContainer(AppNavigator);  
+export default class App extends React.Component {  
+    render() {  
+        return <AppContainer />;  
+    }  
+}  
