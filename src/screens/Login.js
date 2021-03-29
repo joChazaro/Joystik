@@ -26,16 +26,17 @@ class LoginScreen extends Component {
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Email or Username"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = "black"
                autoCapitalize = "none"
                onChangeText = {this.handleEmail}/>
 
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = " Password"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = "black"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/> 
+
             <TouchableOpacity
                style = {styles.loginButton}
                onPress = {
@@ -46,33 +47,34 @@ class LoginScreen extends Component {
          </View>
         );
     }
-
-    // checkLogin = () => {
-    //     const { navigate } = this.props.navigation;
-    //     if(email == "user" && password == "pass"){
-    //         navigate('new_page')
-    //     }
-    // }
+    checkLogin = () => {
+        const { navigate } = this.props.navigation;
+        if(email == "user" && password == "pass"){
+            navigate('new_page')
+        }
+    }
 }
 
 export default LoginScreen
 
 const styles = StyleSheet.create({
    container: {
+      backgroundColor:'turquoise',
+      alignItems:'center',
+      fontSize: 32, 
       paddingTop: 60
-      // fontSize:'20',
    },
+   
    input: {
      paddingTop: 10,
       margin: 15,
       height: 60,
-      borderColor: '#7a42f4',
+      borderColor: 'black',
       borderWidth: 2
-      // fontSize:'20',
    },
 
    loginButton: {
-      backgroundColor: '#7a42f4',
+      backgroundColor: 'gray',
       padding: 10,
       margin: 20,
       height: 75,
@@ -85,6 +87,5 @@ const styles = StyleSheet.create({
       textAlignVertical: 'center',
       fontSize: 35,
       margin:10,
-
    }
 })

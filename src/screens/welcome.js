@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
   container: {
   flexDirection: 'column',
   paddingTop: '50%',
-  
    },
 
    HelloButton: {
@@ -48,14 +47,13 @@ const styles = StyleSheet.create({
       margin: 40,
       height: 90,
       alignContent: 'center',
-
    },
+
    HelloButtonText:{
       color: 'white',
       alignSelf: 'center',
       textAlignVertical: 'center',
       fontSize: 30,
       margin:5,
-
    }
 })
