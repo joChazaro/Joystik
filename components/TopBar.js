@@ -8,10 +8,9 @@ export default function TopBar( {handleProfilePress, handleHomePress} ) {
         <View style = {styles.container}>
             
             <TouchableOpacity>
-                <FontAwesome name ="fire" size ={20} color ="#F06795" onPress={handleHomePress} />
-            </TouchableOpacity>
-
                 <FontAwesome name ="gamepad" size ={20} color ="#F06795" />
+            </TouchableOpacity>
+                
 
             <TouchableOpacity>
                 <FontAwesome name ="user" size = {20} color ="#F06795" onPress={handleProfilePress} />
