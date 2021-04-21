@@ -15,7 +15,6 @@ export default function LibraryScreen({ navigation }) {
       </View>
       <View>
 
-
       </View>
       <View >
         <Collapse>
@@ -38,7 +37,6 @@ export default function LibraryScreen({ navigation }) {
 
       <View>
         <Collapse>
-        
           <CollapseHeader>
           <Text style={styles.tab}>Disliked Games</Text>
           </CollapseHeader>
@@ -56,7 +54,6 @@ export default function LibraryScreen({ navigation }) {
         </Collapse>
       </View>
     </View>
-
   )
 
   function handleProfilePress() {
@@ -66,8 +63,6 @@ export default function LibraryScreen({ navigation }) {
   function handleHomePress() {
     navigation.navigate('Home');
   }
-
-
 }
 
 const styles = StyleSheet.create({
